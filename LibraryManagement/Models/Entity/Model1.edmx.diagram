@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b0f1ca5e4d4342f8bb242f69bed29bcf" Name="Diagram1">
+        <EntityTypeShape EntityType="DbKütüphaneModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbKütüphaneModel.TblCezalar" Width="1.5" PointX="7.5" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbKütüphaneModel.TblHareket" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbKütüphaneModel.TblKasa" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbKütüphaneModel.TblKategori" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbKütüphaneModel.TblKitap" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbKütüphaneModel.TblPersonel" Width="1.5" PointX="5.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbKütüphaneModel.TblUyeler" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbKütüphaneModel.TblYazar" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <AssociationConnector Association="DbKütüphaneModel.FK_TblCezalar_TblHareket" ManuallyRouted="false" />
+        <AssociationConnector Association="DbKütüphaneModel.FK_TblCezalar_TblUyeler" ManuallyRouted="false" />
+        <AssociationConnector Association="DbKütüphaneModel.FK_TblHareket_TblKitap" ManuallyRouted="false" />
+        <AssociationConnector Association="DbKütüphaneModel.FK_TblHareket_TblUyeler" ManuallyRouted="false" />
+        <AssociationConnector Association="DbKütüphaneModel.FK_TblKitap_TblKategori" ManuallyRouted="false" />
+        <AssociationConnector Association="DbKütüphaneModel.FK_TblKitap_TblYazar" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
