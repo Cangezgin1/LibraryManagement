@@ -1,8 +1,33 @@
-﻿
+﻿@using LibraryManagement.Models.Entity
+@model List<TblKategori>
+
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
-<h2>Kategori</h2>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 
+<h2 style="text-align:center;">Kategorileri İşlemleri</h2>
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>Kategori ID</th>
+        <th>Kategori Adı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Ad</td>
+            <td>@Html.ActionLink("Sil", "KategoriSil", new { id = item.Id }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek İstiyor Musunuz?')" })</td>
+            <td><a href="/Kategori/KategoriGetir/@item.Id" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+
+<a href="/Kategori/KategoriEkle" class="btn btn-primary">Yeni Kategori Ekle</a>

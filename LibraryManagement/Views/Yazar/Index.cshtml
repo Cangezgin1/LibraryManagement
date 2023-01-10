@@ -1,0 +1,39 @@
+﻿@using LibraryManagement.Models.Entity
+@model List<TblYazar>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<h2 style="text-align:center;">Yazar İşlemleri</h2>
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>Yazar ID</th>
+        <th>Yazar Ad</th>
+        <th>Yazar Soyad</th>
+        <th>Detay</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Ad</td>
+            <td>@item.Soyad</td>
+            <td>@item.Detay</td>
+            <td>@Html.ActionLink("Sil","YazarSil",new { id = item.Id },new { @class="btn btn-danger", onclick = "return confirm('Silmek İstiyor Musunuz?')" })</td>
+            <td><a href="/Yazar/YazarGetir/@item.Id" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+
+<a href="/Yazar/YazarEkle/" class="btn btn-primary">Yeni Yazar Ekle</a>
+

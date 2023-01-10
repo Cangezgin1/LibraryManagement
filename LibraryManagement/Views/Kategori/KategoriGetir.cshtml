@@ -1,0 +1,23 @@
+﻿
+@model LibraryManagement.Models.Entity.TblKategori
+
+@{
+    ViewBag.Title = "KategoriGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2 style="text-align:center;">Kategori Güncelleme Sayfası</h2>
+
+@using (Html.BeginForm("KategoriGüncelle", "Kategori", FormMethod.Post))
+{
+    <div class="form-group">
+        <br />
+        <label>Kategori Id;</label>
+        @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
+        <br />
+        <label>Kategori Adı;</label>
+        @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+    </div>
+    <br />
+    <button class="btn btn-warning">Güncelle</button>
+}

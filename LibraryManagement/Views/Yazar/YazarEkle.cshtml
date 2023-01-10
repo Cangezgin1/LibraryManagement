@@ -1,0 +1,25 @@
+﻿@model LibraryManagement.Models.Entity.TblYazar
+
+@{
+    ViewBag.Title = "YazarEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2 style="text-align:center;">Yazar Ekleme Sayfası</h2>
+
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:20px">
+        <label>Yazar Adı</label>
+        @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:20px">
+        <label>Yazar Soyadı</label>
+        @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:20px">
+        <label>Yazar Detay</label>
+        @Html.TextAreaFor(x => x.Detay, new { @class = "form-control" })
+    </div>
+    <button style="margin-top:20px" class="btn btn-info">Yazar Ekle</button>
+</form>

@@ -1,0 +1,20 @@
+﻿@model LibraryManagement.Models.Entity.TblKategori
+
+
+@{
+    ViewBag.Title = "KategoriEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2 style="text-align:center">Kategori Ekle</h2>
+
+
+<form style="margin-top:30px" class="form-group" method="post">
+    <div>
+        <label>Kategori Adı</label>
+        <input type="text" class="form-control" name="Ad"/>
+    </div>
+    <div style="margin-top:15px;">
+        <button class="btn btn-info" id="Btn1">Kategori Ekle</button>
+    </div>
+</form>
