@@ -7,10 +7,16 @@
 }
 
 <h2 style="text-align:center;">Kitap Listesi</h2>
-<br />
-<div style="margin-top:15px;margin-bottom:15px;">
-    <input type="text" placeholder="Aranacak kitap ismini giriniz." class="form-control" />
-</div>
+
+@using (Html.BeginForm("Index", "Kitap", FormMethod.Get))
+{
+    <div style="margin-top:15px;margin-bottom:15px;">
+        <b>Aranacak Kitap Adını Giriniz: </b> @Html.TextBox("p")
+        <input type="submit" value="Ara" class="btn btn-success" />
+    </div>
+}
+
+
 <table class="table table-bordered">
     <tr>
         <th>ID</th>
@@ -36,7 +42,7 @@
             <td>@item.SayfaSayısı</td>
             <td>@item.Durum</td>
             <td>@Html.ActionLink("Sil", "KitapSil", new { id = item.Id }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek istediğinizden eminmisiniz?')" })</td>
-            <td><a href="#" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/Kitap/KitapGetir/@item.Id" class="btn btn-success">Güncelle</a></td>
         </tr>
     }
 </table>
