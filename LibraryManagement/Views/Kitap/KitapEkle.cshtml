@@ -1,0 +1,38 @@
+﻿
+@model LibraryManagement.Models.Entity.TblKitap
+
+@{
+    ViewBag.Title = "KitapEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2 style="text-align:center;">Kitap Ekleme Sayfası</h2>
+
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:20px">
+        <label>Kitap Adı</label>
+        @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:20px">
+        <label>Kitap Kategorisi</label>
+        @Html.DropDownListFor(x => x.TblKategori.Id, (List<SelectListItem>)ViewBag.deger1, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:20px">
+        <label>Kitap Yazarı</label>
+        @Html.DropDownListFor(x => x.TblYazar.Id,(List<SelectListItem>)ViewBag.deger2, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:20px">
+        <label>Basım Yılı</label>
+        @Html.TextBoxFor(x => x.BasımYıl, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:20px">
+        <label>Yayınevi</label>
+        @Html.TextBoxFor(x => x.YayınEvi, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:20px">
+        <label>Sayfa Sayısı</label>
+        @Html.TextBoxFor(x => x.SayfaSayısı, new { @class = "form-control" })
+    </div>
+    <button style="margin-top:20px" class="btn btn-info">Kitap Ekle</button>
+</form>

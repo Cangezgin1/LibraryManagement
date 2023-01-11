@@ -1,0 +1,43 @@
+﻿@using LibraryManagement.Models.Entity
+@model List<TblKitap>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2 style="text-align:center;">Kitap Listesi</h2>
+<br />
+<div style="margin-top:15px;margin-bottom:15px;">
+    <input type="text" placeholder="Aranacak kitap ismini giriniz." class="form-control" />
+</div>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Kitap Adı</th>
+        <th>Kitap Yazarı</th>
+        <th>Kategorisi</th>
+        <th>Basım Yılı</th>
+        <th>Yayınevi</th>
+        <th>Sayfa</th>
+        <th>Durum</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Ad</td>
+            <td>@item.TblYazar.Ad @item.TblYazar.Soyad</td>
+            <td>@item.TblKategori.Ad</td>
+            <td>@item.BasımYıl</td>
+            <td>@item.YayınEvi</td>
+            <td>@item.SayfaSayısı</td>
+            <td>@item.Durum</td>
+            <td>@Html.ActionLink("Sil", "KitapSil", new { id = item.Id }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek istediğinizden eminmisiniz?')" })</td>
+            <td><a href="#" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Kitap/KitapEkle/" class="btn btn-primary">Kitap Ekle</a>
