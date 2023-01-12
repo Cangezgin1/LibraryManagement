@@ -1,0 +1,33 @@
+﻿@using LibraryManagement.Models.Entity
+@model List<TblPersonel>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<h2 style="text-align:center;">Kategorileri İşlemleri</h2>
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>Kategori ID</th>
+        <th>Personel Adı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Personel</td>
+            <td>@Html.ActionLink("Sil", "PersonelSil", new { id = item.Id }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek İstiyor Musunuz?')" })</td>
+            <td><a href="/Personel/PersonelGetir/@item.Id" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+
+<a href="/Personel/PersonelEkle" class="btn btn-primary">Yeni Personel Ekle</a>

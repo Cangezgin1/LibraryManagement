@@ -11,10 +11,12 @@ namespace LibraryManagement.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class TblPersonel
     {
         public byte Id { get; set; }
+        [Required(ErrorMessage ="Personel Adý boþ geçilemez.")]
         public string Personel { get; set; }
     }
 }

@@ -13,7 +13,7 @@ namespace LibraryManagement.Controllers
         DbKütüphaneEntities db = new DbKütüphaneEntities();
 
 
-
+        #region Kategori Listeleme
 
         public ActionResult Index()
         {
@@ -21,7 +21,9 @@ namespace LibraryManagement.Controllers
             return View(values);
         }
 
+        #endregion
 
+        #region Kategori Ekleme
 
         [HttpGet]
         public ActionResult KategoriEkle()
@@ -35,10 +37,11 @@ namespace LibraryManagement.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-        
 
-        
-        
+        #endregion
+
+        #region Kategori Silme
+
         public ActionResult KategoriSil(int id)
         {
             var values = db.TblKategori.Find(id);
@@ -47,8 +50,9 @@ namespace LibraryManagement.Controllers
             return RedirectToAction("Index");
         }
 
+        #endregion
 
-
+        #region Kategori Güncelleme
 
         public ActionResult KategoriGetir(int id)
         {
@@ -62,5 +66,8 @@ namespace LibraryManagement.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        #endregion
+
     }
 }

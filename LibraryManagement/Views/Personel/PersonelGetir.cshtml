@@ -1,0 +1,25 @@
+﻿@model LibraryManagement.Models.Entity.TblPersonel
+
+@{
+    ViewBag.Title = "PersonelGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+<h2 style="text-align:center;">Personel Güncelleme Sayfası</h2>
+
+
+@using (Html.BeginForm("PersonelGüncelle", "Personel", FormMethod.Post))
+ {
+    <div class="form-group">
+        <br />
+        <label>Personel Id</label>
+        @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
+        <br />
+        <label>Personel Adı</label>
+        @Html.TextBoxFor(x => x.Personel, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x=>x.Personel,"",new { @style="color:red" })
+    </div>
+    <br />
+    <button class="btn btn-warning">Güncelle</button>
+ }

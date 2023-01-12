@@ -13,12 +13,16 @@ namespace LibraryManagement.Controllers
         DbKütüphaneEntities db = new DbKütüphaneEntities();
 
 
+
+        #region Yazar Listeleme
         public ActionResult Index()
         {
             var values = db.TblYazar.ToList();
             return View(values);
         }
+        #endregion
 
+        #region Yazar Ekleme
 
         [HttpGet]
         public ActionResult YazarEkle()
@@ -32,9 +36,9 @@ namespace LibraryManagement.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        #endregion
 
-
-
+        #region Yazar Silme
 
         public ActionResult YazarSil(int id)
         {
@@ -44,8 +48,9 @@ namespace LibraryManagement.Controllers
             return RedirectToAction("Index");
         }
 
+        #endregion
 
-
+        #region Yazar Listeleme
 
         public ActionResult YazarGetir(int id)
         {
@@ -61,6 +66,8 @@ namespace LibraryManagement.Controllers
             db.SaveChanges();
             return RedirectToAction("Index","Yazar");
         }
+        #endregion
+
 
     }
 }
