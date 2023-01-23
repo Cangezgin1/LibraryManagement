@@ -12,7 +12,6 @@ namespace LibraryManagement.Controllers
 
         DbKütüphaneEntities db = new DbKütüphaneEntities();
 
-
         #region Kategori Listeleme
 
         public ActionResult Index()

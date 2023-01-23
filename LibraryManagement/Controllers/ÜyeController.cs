@@ -18,7 +18,7 @@ namespace LibraryManagement.Controllers
 
         public ActionResult Index(int sayfa = 1)
         {
-            var values = db.TblUyeler.ToList().ToPagedList(sayfa,3);
+            var values = db.TblUyeler.ToList().ToPagedList(sayfa,5);
             return View(values);
         }
 
