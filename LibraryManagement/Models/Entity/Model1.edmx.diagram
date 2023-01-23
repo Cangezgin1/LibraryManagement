@@ -20,6 +20,7 @@
         <AssociationConnector Association="DbKütüphaneModel.FK_TblHareket_TblUyeler" ManuallyRouted="false" />
         <AssociationConnector Association="DbKütüphaneModel.FK_TblKitap_TblKategori" ManuallyRouted="false" />
         <AssociationConnector Association="DbKütüphaneModel.FK_TblKitap_TblYazar" ManuallyRouted="false" />
+        <AssociationConnector Association="DbKütüphaneModel.FK_TblHareket_TblPersonel" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -21,15 +21,15 @@
         <th>İade Al</th>
     </tr>
     @foreach (var item in Model)
-    {
+     {
         <tr>
             <td>@item.Id</td>
             <td>@item.TblKitap.Ad</td>
             <td>@item.TblUyeler.Ad&nbsp; @item.TblUyeler.Soyad</td>
-            <td>@item.Personel</td>
+            <td>@item.TblPersonel.Personel</td>
             <td>@item.AlışTarih.Value.ToShortDateString()</td>
             <td>@item.İadeTarih.Value.ToShortDateString()</td>
-            <td><a href="/Odunc/Oduncİade/@item.Id" class="btn btn-default" style="background-color:#00ffff;color:white">Kitabı İade Et</a></td>
+            <td><a href="/Odunc/Oduncİade/@item.Id" class="btn btn-default" style="background-color:#038d8d;color:white">Kitabı İade Et</a></td>
         </tr>
-    }
+     }
 </table>

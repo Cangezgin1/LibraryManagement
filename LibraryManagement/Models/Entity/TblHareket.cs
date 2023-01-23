@@ -23,7 +23,7 @@ namespace LibraryManagement.Models.Entity
         public int Id { get; set; }
         public Nullable<int> Kitap { get; set; }
         public Nullable<int> Üye { get; set; }
-        public Nullable<int> Personel { get; set; }
+        public Nullable<byte> Personel { get; set; }
         public Nullable<System.DateTime> AlışTarih { get; set; }
         public Nullable<System.DateTime> İadeTarih { get; set; }
     
@@ -31,5 +31,6 @@ namespace LibraryManagement.Models.Entity
         public virtual ICollection<TblCezalar> TblCezalar { get; set; }
         public virtual TblKitap TblKitap { get; set; }
         public virtual TblUyeler TblUyeler { get; set; }
+        public virtual TblPersonel TblPersonel { get; set; }
     }
 }

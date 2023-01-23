@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DbKütüphaneModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DbKütüphaneModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -33,7 +33,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Kitap" Type="int" />
           <Property Name="Üye" Type="int" />
-          <Property Name="Personel" Type="int" />
+          <Property Name="Personel" Type="tinyint" />
           <Property Name="AlışTarih" Type="smalldatetime" />
           <Property Name="İadeTarih" Type="smalldatetime" />
         </EntityType>
@@ -131,6 +131,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TblHareket_TblPersonel">
+          <End Role="TblPersonel" Type="Self.TblPersonel" Multiplicity="0..1" />
+          <End Role="TblHareket" Type="Self.TblHareket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblPersonel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TblHareket">
+              <PropertyRef Name="Personel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TblHareket_TblUyeler">
           <End Role="TblUyeler" Type="Self.TblUyeler" Multiplicity="0..1" />
           <End Role="TblHareket" Type="Self.TblHareket" Multiplicity="*" />
@@ -189,6 +201,10 @@
             <End Role="TblKitap" EntitySet="TblKitap" />
             <End Role="TblHareket" EntitySet="TblHareket" />
           </AssociationSet>
+          <AssociationSet Name="FK_TblHareket_TblPersonel" Association="Self.FK_TblHareket_TblPersonel">
+            <End Role="TblPersonel" EntitySet="TblPersonel" />
+            <End Role="TblHareket" EntitySet="TblHareket" />
+          </AssociationSet>
           <AssociationSet Name="FK_TblHareket_TblUyeler" Association="Self.FK_TblHareket_TblUyeler">
             <End Role="TblUyeler" EntitySet="TblUyeler" />
             <End Role="TblHareket" EntitySet="TblHareket" />
@@ -202,8 +218,7 @@
             <End Role="TblKitap" EntitySet="TblKitap" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DbKütüphaneModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -237,12 +252,13 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Kitap" Type="Int32" />
           <Property Name="Üye" Type="Int32" />
-          <Property Name="Personel" Type="Int32" />
+          <Property Name="Personel" Type="Byte" />
           <Property Name="AlışTarih" Type="DateTime" Precision="0" />
           <Property Name="İadeTarih" Type="DateTime" Precision="0" />
           <NavigationProperty Name="TblCezalar" Relationship="Self.FK_TblCezalar_TblHareket" FromRole="TblHareket" ToRole="TblCezalar" />
           <NavigationProperty Name="TblKitap" Relationship="Self.FK_TblHareket_TblKitap" FromRole="TblHareket" ToRole="TblKitap" />
           <NavigationProperty Name="TblUyeler" Relationship="Self.FK_TblHareket_TblUyeler" FromRole="TblHareket" ToRole="TblUyeler" />
+          <NavigationProperty Name="TblPersonel" Relationship="DbKütüphaneModel.FK_TblHareket_TblPersonel" FromRole="TblHareket" ToRole="TblPersonel" />
         </EntityType>
         <EntityType Name="TblKasa">
           <Key>
@@ -282,6 +298,7 @@
           </Key>
           <Property Name="Id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Personel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TblHareket" Relationship="DbKütüphaneModel.FK_TblHareket_TblPersonel" FromRole="TblPersonel" ToRole="TblHareket" />
         </EntityType>
         <EntityType Name="TblUyeler">
           <Key>
@@ -415,7 +432,23 @@
             <End Role="TblYazar" EntitySet="TblYazar" />
             <End Role="TblKitap" EntitySet="TblKitap" />
           </AssociationSet>
+          <AssociationSet Name="FK_TblHareket_TblPersonel" Association="DbKütüphaneModel.FK_TblHareket_TblPersonel">
+            <End Role="TblPersonel" EntitySet="TblPersonel" />
+            <End Role="TblHareket" EntitySet="TblHareket" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_TblHareket_TblPersonel">
+          <End Type="DbKütüphaneModel.TblPersonel" Role="TblPersonel" Multiplicity="0..1" />
+          <End Type="DbKütüphaneModel.TblHareket" Role="TblHareket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblPersonel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TblHareket">
+              <PropertyRef Name="Personel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
