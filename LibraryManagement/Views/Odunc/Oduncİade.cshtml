@@ -34,7 +34,7 @@
         @Html.TextBoxFor(x => x.İadeTarih, "{0: dd MM yyyy}", new { @class = "form-control" })
         <br />
         <label>Üyenin Getirdiği Tarih</label>
-        <input type="text" class="form-control" value="@DateTime.Now.ToShortDateString()" />
+        <input type="text" class="form-control" name="ÜyeGetirTarih" value="@DateTime.Now.ToShortDateString()" />
     </div>
     <br />
     <button style="margin-top: 20px; background-color: #038d8d; color: white;" class="btn btn-group">Ödünç Kitabı Geri Al</button>

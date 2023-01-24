@@ -26,6 +26,8 @@ namespace LibraryManagement.Models.Entity
         public Nullable<byte> Personel { get; set; }
         public Nullable<System.DateTime> AlışTarih { get; set; }
         public Nullable<System.DateTime> İadeTarih { get; set; }
+        public Nullable<System.DateTime> ÜyeGetirTarih { get; set; }
+        public Nullable<bool> İslemDurum { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TblCezalar> TblCezalar { get; set; }

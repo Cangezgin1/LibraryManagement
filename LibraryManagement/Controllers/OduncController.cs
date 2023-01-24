@@ -37,12 +37,23 @@ namespace LibraryManagement.Controllers
         }
 
 
+        [HttpGet]
         public ActionResult Oduncİade(int id)
         {
             var odn = db.TblHareket.Find(id);
             odn.AlışTarih.Value.ToShortDateString();
             odn.İadeTarih.Value.ToShortDateString();
             return View("Oduncİade",odn);
+        }
+        [HttpPost]
+        public ActionResult Oduncİade(TblHareket tblHareket)
+        {
+            var values = db.TblHareket.Find(tblHareket.Id);
+            values.TblKitap.Durum = true;
+            values.İslemDurum = true;
+            values.ÜyeGetirTarih = tblHareket.ÜyeGetirTarih;
+
+            return RedirectToAction("Index");
         }
     }
 }

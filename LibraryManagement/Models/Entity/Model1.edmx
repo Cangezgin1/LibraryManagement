@@ -36,6 +36,8 @@
           <Property Name="Personel" Type="tinyint" />
           <Property Name="AlışTarih" Type="smalldatetime" />
           <Property Name="İadeTarih" Type="smalldatetime" />
+          <Property Name="ÜyeGetirTarih" Type="smalldatetime" />
+          <Property Name="İslemDurum" Type="bit" />
         </EntityType>
         <EntityType Name="TblKasa">
           <Key>
@@ -259,6 +261,8 @@
           <NavigationProperty Name="TblKitap" Relationship="Self.FK_TblHareket_TblKitap" FromRole="TblHareket" ToRole="TblKitap" />
           <NavigationProperty Name="TblUyeler" Relationship="Self.FK_TblHareket_TblUyeler" FromRole="TblHareket" ToRole="TblUyeler" />
           <NavigationProperty Name="TblPersonel" Relationship="DbKütüphaneModel.FK_TblHareket_TblPersonel" FromRole="TblHareket" ToRole="TblPersonel" />
+          <Property Name="ÜyeGetirTarih" Type="DateTime" Precision="0" />
+          <Property Name="İslemDurum" Type="Boolean" />
         </EntityType>
         <EntityType Name="TblKasa">
           <Key>
@@ -481,6 +485,8 @@
           <EntitySetMapping Name="TblHareket">
             <EntityTypeMapping TypeName="DbKütüphaneModel.TblHareket">
               <MappingFragment StoreEntitySet="TblHareket">
+                <ScalarProperty Name="İslemDurum" ColumnName="İslemDurum" />
+                <ScalarProperty Name="ÜyeGetirTarih" ColumnName="ÜyeGetirTarih" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Kitap" ColumnName="Kitap" />
                 <ScalarProperty Name="Üye" ColumnName="Üye" />
