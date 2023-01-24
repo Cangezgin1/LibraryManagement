@@ -11,8 +11,10 @@
 
 
 <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<br />
 
-<h2 style="text-align:center;margin-bottom:40px;">Üye İşlemleri</h2>
+<h2 style="text-align:center;">Üye İşlemleri</h2>
+<br />
 
 
 <table class="table table-bordered">
@@ -45,6 +47,6 @@
     }
 </table>
 
-@Html.PagedListPager((IPagedList)Model,sayfa=>Url.Action("Index",new { sayfa}))
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }))
 
 <a href="/Üye/ÜyeEkle" class="btn btn-primary">Yeni Üye Ekle</a>

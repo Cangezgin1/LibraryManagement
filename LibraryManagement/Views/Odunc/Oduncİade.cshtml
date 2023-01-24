@@ -1,0 +1,41 @@
+﻿@model LibraryManagement.Models.Entity.TblHareket
+
+@{
+    ViewBag.Title = "Oduncİade";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<br />
+
+<h2 style="text-align:center;">Kitap İade Sayfası</h2>
+<br />
+
+
+@using (Html.BeginForm("Oduncİade", "Odunc", FormMethod.Post))
+ {
+    <div class="form-group">
+        <br />
+        <label>Hareket Id</label>
+        @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
+        <br />
+        <label>Kitap Adı</label>
+        @Html.TextBoxFor(x => x.TblKitap.Ad, new { @class = "form-control" })
+        <br />
+        <label>Üye Adı</label>
+        @Html.TextBoxFor(x => x.TblUyeler.Ad, new { @class = "form-control" })
+        <br />
+        <label>Personel Adı</label>
+        @Html.TextBoxFor(x => x.TblPersonel.Personel, new { @class = "form-control" })
+        <br />
+        <label>Alış Tarihi</label>
+        @Html.TextBoxFor(x => x.AlışTarih, "{0: dd MM yyyy}", new { @class = "form-control" })
+        <br />
+        <label>Normal İade Tarihi</label>
+        @Html.TextBoxFor(x => x.İadeTarih, "{0: dd MM yyyy}", new { @class = "form-control" })
+        <br />
+        <label>Üyenin Getirdiği Tarih</label>
+        <input type="text" class="form-control" value="@DateTime.Now.ToShortDateString()" />
+    </div>
+    <br />
+    <button style="margin-top: 20px; background-color: #038d8d; color: white;" class="btn btn-group">Ödünç Kitabı Geri Al</button>
+ }

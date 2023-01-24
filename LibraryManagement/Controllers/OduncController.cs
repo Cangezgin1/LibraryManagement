@@ -28,9 +28,21 @@ namespace LibraryManagement.Controllers
         [HttpPost]
         public ActionResult OduncVer(TblHareket tblHareket)
         {
+            var values = db.TblKitap.Find(tblHareket.Kitap);
+            values.Durum = false;
+
             db.TblHareket.Add(tblHareket);
             db.SaveChanges();
-            return View();
+            return RedirectToAction("Index");
+        }
+
+
+        public ActionResult Oduncİade(int id)
+        {
+            var odn = db.TblHareket.Find(id);
+            odn.AlışTarih.Value.ToShortDateString();
+            odn.İadeTarih.Value.ToShortDateString();
+            return View("Oduncİade",odn);
         }
     }
 }

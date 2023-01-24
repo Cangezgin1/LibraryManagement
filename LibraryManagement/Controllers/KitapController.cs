@@ -110,6 +110,7 @@ namespace LibraryManagement.Controllers
             var yzr = db.TblYazar.Where(x => x.Id == tblKitap.TblYazar.Id).FirstOrDefault();
             kitap.Kategori = ktg.Id;
             kitap.Yazar = yzr.Id;
+            kitap.Durum = true;
             db.SaveChanges();
             return RedirectToAction("Index","Kitap");
         }

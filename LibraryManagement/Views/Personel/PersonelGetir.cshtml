@@ -5,12 +5,14 @@
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
+<br />
 
 <h2 style="text-align:center;">Personel Güncelleme Sayfası</h2>
+<br />
 
 
 @using (Html.BeginForm("PersonelGüncelle", "Personel", FormMethod.Post))
- {
+{
     <div class="form-group">
         <br />
         <label>Personel Id</label>
@@ -18,8 +20,8 @@
         <br />
         <label>Personel Adı</label>
         @Html.TextBoxFor(x => x.Personel, new { @class = "form-control" })
-        @Html.ValidationMessageFor(x=>x.Personel,"",new { @style="color:red" })
+        @Html.ValidationMessageFor(x => x.Personel, "", new { @style = "color:red" })
     </div>
     <br />
     <button class="btn btn-warning">Güncelle</button>
- }
+}

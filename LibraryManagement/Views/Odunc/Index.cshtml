@@ -6,8 +6,9 @@
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
-
+<br />
 <h2 style="text-align:center;">Ödünç Kitap Listesi</h2>
+<br />
 
 
 <table class="table table-bordered">
@@ -21,7 +22,7 @@
         <th>İade Al</th>
     </tr>
     @foreach (var item in Model)
-     {
+    {
         <tr>
             <td>@item.Id</td>
             <td>@item.TblKitap.Ad</td>
@@ -31,5 +32,5 @@
             <td>@item.İadeTarih.Value.ToShortDateString()</td>
             <td><a href="/Odunc/Oduncİade/@item.Id" class="btn btn-default" style="background-color:#038d8d;color:white">Kitabı İade Et</a></td>
         </tr>
-     }
+    }
 </table>

@@ -5,8 +5,10 @@
     ViewBag.Title = "KitapEkle";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
+<br />
 
 <h2 style="text-align:center;">Kitap Ekleme Sayfası</h2>
+<br />
 
 <form class="form-group" method="post">
     <div></div>
@@ -20,7 +22,7 @@
     </div>
     <div style="margin-top:20px">
         <label>Kitap Yazarı</label>
-        @Html.DropDownListFor(x => x.TblYazar.Id,(List<SelectListItem>)ViewBag.deger2, new { @class = "form-control" })
+        @Html.DropDownListFor(x => x.TblYazar.Id, (List<SelectListItem>)ViewBag.deger2, new { @class = "form-control" })
     </div>
     <div style="margin-top:20px">
         <label>Basım Yılı</label>

@@ -5,8 +5,10 @@
     ViewBag.Title = "YazarGetir";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
+<br />
 
 <h2 style="text-align:center;">Yazar Güncelleme Sayfası</h2>
+<br />
 
 @using (Html.BeginForm("YazarGüncelle", "Yazar", FormMethod.Post))
 {
@@ -14,15 +16,15 @@
         <label>Yazar ID</label>
         @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
     </div>
-    <div style="margin-top:15px;"  class="form-group">
+    <div style="margin-top:15px;" class="form-group">
         <label>Yazar Ad</label>
         @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
     </div>
-    <div style="margin-top:15px;"  class="form-group">
+    <div style="margin-top:15px;" class="form-group">
         <label>Yazar Soyad</label>
         @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control" })
     </div>
-    <div style="margin-top:15px;"  class="form-group">
+    <div style="margin-top:15px;" class="form-group">
         <label>Detay</label>
         @Html.TextAreaFor(x => x.Detay, new { @class = "form-control" })
     </div>

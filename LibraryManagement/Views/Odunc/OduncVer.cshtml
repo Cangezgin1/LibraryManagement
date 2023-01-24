@@ -4,9 +4,11 @@
     ViewBag.Title = "OduncVer";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
+<br />
 
 
 <h2 style="text-align:center;">Kitap Ekleme Sayfası</h2>
+<br />
 
 <form class="form-group" method="post">
     <div></div>
@@ -24,11 +26,11 @@
     </div>
     <div style="margin-top:20px">
         <label>Kitap Alış Tarihi</label>
-        <input type="text" class="form-control" name="AlışTarih" value="@DateTime.Now.ToShortDateString()"/>
+        <input type="text" class="form-control" name="AlışTarih" value="@DateTime.Now.ToShortDateString()" />
     </div>
     <div style="margin-top:20px">
         <label>Kitap İade Tarihi</label>
-        <input type="text" class="form-control" name="İadeTarih" value="@DateTime.Now.AddDays(7).ToShortDateString()"/>
+        <input type="text" class="form-control" name="İadeTarih" value="@DateTime.Now.AddDays(7).ToShortDateString()" />
     </div>
     <button style="margin-top:20px;background-color:#a330b5;color:white;" class="btn btn-group">Kitap Ödünç Ver</button>
 </form>

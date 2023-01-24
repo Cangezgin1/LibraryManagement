@@ -5,15 +5,17 @@
     ViewBag.Title = "PersonelEkle";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
+<br />
 
 <h2 style="text-align:center">Personel Ekle</h2>
+<br />
 
 <form style="margin-top:30px" class="form-group" method="post">
-    
+
     <div>
         <label>Personel Adı</label>
-        @Html.TextBoxFor(x=>x.Personel, new {@class="form-control" })
-        @Html.ValidationMessageFor(x=>x.Personel,"",new { @style="color:red" })
+        @Html.TextBoxFor(x => x.Personel, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Personel, "", new { @style = "color:red" })
     </div>
 
     <div style="margin-top:15px;">

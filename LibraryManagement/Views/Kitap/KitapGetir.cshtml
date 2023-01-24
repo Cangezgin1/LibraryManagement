@@ -6,11 +6,13 @@
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
+<br />
 
 <h2 style="text-align:center;">Kitap Güncelleme Sayfası</h2>
+<br />
 
 @using (Html.BeginForm("KitapGüncelle", "Kitap", FormMethod.Post))
- {
+{
     <div style="margin-top:15px;" class="form-group">
         <label>Kitap ID</label>
         @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
@@ -40,6 +42,5 @@
         @Html.TextBoxFor(x => x.SayfaSayısı, new { @class = "form-control" })
     </div>
 
-
     <button class="btn btn-warning">GÜNCELLE</button>
- }
+}
