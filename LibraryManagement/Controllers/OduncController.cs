@@ -15,7 +15,7 @@ namespace LibraryManagement.Controllers
 
         public ActionResult Index()
         {
-            var values = db.TblHareket.ToList();
+            var values = db.TblHareket.Where(x => x.İslemDurum == false).ToList();
             return View(values);
         }
 
@@ -53,6 +53,7 @@ namespace LibraryManagement.Controllers
             values.İslemDurum = true;
             values.ÜyeGetirTarih = tblHareket.ÜyeGetirTarih;
 
+            db.SaveChanges();
             return RedirectToAction("Index");
         }
     }
