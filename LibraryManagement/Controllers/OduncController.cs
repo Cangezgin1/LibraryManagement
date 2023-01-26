@@ -20,6 +20,8 @@ namespace LibraryManagement.Controllers
         }
 
 
+
+
         [HttpGet]
         public ActionResult OduncVer()
         {
@@ -30,11 +32,13 @@ namespace LibraryManagement.Controllers
         {
             var values = db.TblKitap.Find(tblHareket.Kitap);
             values.Durum = false;
-
+            
             db.TblHareket.Add(tblHareket);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+
 
 
         [HttpGet]

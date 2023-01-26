@@ -141,6 +141,7 @@
     <Compile Include="Controllers\PersonelController.cs" />
     <Compile Include="Controllers\YazarController.cs" />
     <Compile Include="Controllers\ÜyeController.cs" />
+    <Compile Include="Controllers\İslemController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -258,6 +259,7 @@
     <Content Include="Views\Odunc\OduncVer.cshtml" />
     <Content Include="Views\Odunc\Index.cshtml" />
     <Content Include="Views\Odunc\Oduncİade.cshtml" />
+    <Content Include="Views\İslem\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
