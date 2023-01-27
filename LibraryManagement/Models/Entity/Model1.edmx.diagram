@@ -21,6 +21,8 @@
         <AssociationConnector Association="DbKütüphaneModel.FK_TblKitap_TblKategori" ManuallyRouted="false" />
         <AssociationConnector Association="DbKütüphaneModel.FK_TblKitap_TblYazar" ManuallyRouted="false" />
         <AssociationConnector Association="DbKütüphaneModel.FK_TblHareket_TblPersonel" />
+        <EntityTypeShape EntityType="DbKütüphaneModel.TblHakkımızda" Width="1.5" PointX="8.375" PointY="7.75" />
+        <EntityTypeShape EntityType="DbKütüphaneModel.Tblİletişim" Width="1.5" PointX="1.125" PointY="7.875" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

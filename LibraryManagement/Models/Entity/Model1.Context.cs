@@ -34,5 +34,7 @@ namespace LibraryManagement.Models.Entity
         public virtual DbSet<TblPersonel> TblPersonel { get; set; }
         public virtual DbSet<TblUyeler> TblUyeler { get; set; }
         public virtual DbSet<TblYazar> TblYazar { get; set; }
+        public virtual DbSet<TblHakkımızda> TblHakkımızda { get; set; }
+        public virtual DbSet<Tblİletişim> Tblİletişim { get; set; }
     }
 }
