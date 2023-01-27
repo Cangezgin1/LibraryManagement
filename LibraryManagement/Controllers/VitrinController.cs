@@ -22,8 +22,6 @@ namespace LibraryManagement.Controllers
 
             return View(cs);
         }
-
-
         [HttpPost]
         public ActionResult Index(Tblİletişim tblİletişim)
         {
@@ -31,5 +29,9 @@ namespace LibraryManagement.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+
+
+
     }
 }
