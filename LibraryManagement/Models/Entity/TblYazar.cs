@@ -11,7 +11,8 @@ namespace LibraryManagement.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class TblYazar
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,7 +22,11 @@ namespace LibraryManagement.Models.Entity
         }
     
         public int Id { get; set; }
+        [Required(ErrorMessage ="Yazar Adýný boþ geçemezsiniz.")]
+        [StringLength(20,ErrorMessage ="Yazar Adý 20 karakterden uzun olamaz.")]
         public string Ad { get; set; }
+        [Required(ErrorMessage = "Yazar Soyadýný boþ geçemezsiniz.")]
+        [StringLength(20, ErrorMessage = "Yazar Soyadý 20 karakterden uzun olamaz.")]
         public string Soyad { get; set; }
         public string Detay { get; set; }
     

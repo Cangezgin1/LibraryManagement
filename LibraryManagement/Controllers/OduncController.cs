@@ -42,15 +42,20 @@ namespace LibraryManagement.Controllers
 
 
         [HttpGet]
-        public ActionResult Oduncİade(int id)
+        public ActionResult Oduncİade(TblHareket tblHareket)
         {
-            var odn = db.TblHareket.Find(id);
+            var odn = db.TblHareket.Find(tblHareket.Id);
+            DateTime d1 = DateTime.Parse(odn.İadeTarih.ToString());
+            DateTime d2 = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            TimeSpan d3 = d2 - d1;
+            ViewBag.dgr = d3.TotalDays;
             odn.AlışTarih.Value.ToShortDateString();
             odn.İadeTarih.Value.ToShortDateString();
             return View("Oduncİade",odn);
         }
+
         [HttpPost]
-        public ActionResult Oduncİade(TblHareket tblHareket)
+        public ActionResult OduncGuncelle(TblHareket tblHareket)
         {
             var values = db.TblHareket.Find(tblHareket.Id);
             values.TblKitap.Durum = true;

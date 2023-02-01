@@ -11,11 +11,11 @@
 <br />
 
 
-@using (Html.BeginForm("Oduncİade", "Odunc", FormMethod.Post))
- {
+@using (Html.BeginForm("OduncGuncelle", "Odunc", FormMethod.Post))
+{
     <div class="form-group">
         <br />
-        <label>Hareket Id</label>
+        <label>Hareket ID</label>
         @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
         <br />
         <label>Kitap Adı</label>
@@ -35,7 +35,9 @@
         <br />
         <label>Üyenin Getirdiği Tarih</label>
         <input type="text" class="form-control" name="ÜyeGetirTarih" value="@DateTime.Now.ToShortDateString()" />
+        <br />
+        <label>Geç gelen gün sayısı</label>
+        <input type="text" class="form-control" id="Gecinput" value="@ViewBag.dgr" />
     </div>
-    <br />
     <button style="margin-top: 20px; background-color: #038d8d; color: white;" class="btn btn-group">Ödünç Kitabı Geri Al</button>
- }
+}

@@ -32,6 +32,10 @@ namespace LibraryManagement.Controllers
         [HttpPost]
         public ActionResult YazarEkle(TblYazar tblYazar)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("YazarEkle");
+            }
             db.TblYazar.Add(tblYazar);
             db.SaveChanges();
             return RedirectToAction("Index");
@@ -50,7 +54,7 @@ namespace LibraryManagement.Controllers
 
         #endregion
 
-        #region Yazar Listeleme
+        #region Yazar Güncelleme
 
         public ActionResult YazarGetir(int id)
         {
@@ -59,6 +63,10 @@ namespace LibraryManagement.Controllers
         }
         public ActionResult YazarGüncelle(TblYazar tblYazar)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("YazarGetir");
+            }
             var values = db.TblYazar.Find(tblYazar.Id);
             values.Ad = tblYazar.Ad;
             values.Soyad = tblYazar.Soyad;

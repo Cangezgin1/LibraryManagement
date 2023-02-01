@@ -14,10 +14,12 @@
     <div style="margin-top:20px">
         <label>Yazar Adı</label>
         @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Ad)
     </div>
     <div style="margin-top:20px">
         <label>Yazar Soyadı</label>
         @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Soyad)
     </div>
     <div style="margin-top:20px">
         <label>Yazar Detay</label>
