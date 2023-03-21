@@ -46,7 +46,7 @@ namespace LibraryManagement.Controllers
         #region Personel Sil
 
         public ActionResult PersonelSil(int id)
-        {
+        { 
             var values = db.TblPersonel.Find(id);
             db.TblPersonel.Remove(values);
             db.SaveChanges();
