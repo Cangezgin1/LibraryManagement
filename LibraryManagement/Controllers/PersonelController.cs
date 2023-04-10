@@ -25,7 +25,7 @@ namespace LibraryManagement.Controllers
 
         #region Personel Ekle
 
-        [HttpGet]
+        [HttpGet] 
         public ActionResult PersonelEkle()
         {
             return View();
