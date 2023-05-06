@@ -8,7 +8,7 @@ using LibraryManagement.Models.Entity;
 namespace LibraryManagement.Controllers
 {
     public class KitapController : Controller
-    {
+    { 
 
         DbKütüphaneEntities db = new DbKütüphaneEntities();
 
