@@ -10,7 +10,7 @@ namespace LibraryManagement.Controllers
     public class KitapController : Controller
     { 
 
-        DbKütüphaneEntities db = new DbKütüphaneEntities();
+        DbKütüphaneEntities db = new DbKütüphaneEntities(); 
 
 
         #region Kitap Listesi
