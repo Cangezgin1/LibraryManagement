@@ -43,7 +43,7 @@ namespace LibraryManagement.Controllers
 
         [HttpGet]
         public ActionResult Oduncİade(TblHareket tblHareket)
-        { 
+        {  
             var odn = db.TblHareket.Find(tblHareket.Id);
             DateTime d1 = DateTime.Parse(odn.İadeTarih.ToString());
             DateTime d2 = Convert.ToDateTime(DateTime.Now.ToShortDateString());
